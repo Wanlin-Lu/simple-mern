@@ -4,7 +4,7 @@ const getProducts = async (req, res, next) => {
   try {
     const productsResponse = await ProductsDAO.getProducts()
 
-    res.json({ status: "suc", products: productsResponse})
+    res.json({ status: "ok", products: productsResponse})
   } catch (err) {
     res.status(500).json({ message: "Fail to get from DB", err })
   }
@@ -23,7 +23,7 @@ const putProduct = async (req, res, next) => {
 
     const updatedProducts = await ProductsDAO.getProducts()
 
-    res.json({ status: 'success', products: updatedProducts })
+    res.json({ status: 'ok', products: updatedProducts })
   } catch (err) {
     res.status(500).json({ message: "Fail to post", err });
   }
